@@ -1,6 +1,4 @@
-import os
 from minio import Minio
-from minio.error import S3Error
 
 
 def main():
@@ -10,22 +8,8 @@ def main():
                    secret_key="zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG",
                    )
 
-    # Папка для заугрузки
-    source_folder = "./test_dir"
-
     # Название бакета
     bucket_name = "python-test-bucket"
-
-    # Проверяем, существует ли бакет , если не тто создаем
-    found = client.bucket_exists(bucket_name)
-    if not found:
-        client.make_bucket(bucket_name)
-        print(f"Бакет {bucket_name} создан")
-    else:
-        print(f"Бакет {bucket_name} уже существует")
-
-    # Загружаем файлы в бакет
-    # upload_files(client, bucket_name, source_folder)
 
     # ДАТА ПО КОТОРОЙ ИЩЕМ
     find_time = '2024-05-23'
@@ -53,7 +37,6 @@ def main():
         else:
             print('Таких файлов нет по указанной дате')
             break
-    # проверка на существование во всех папках
 
 
 if __name__ == "__main__":

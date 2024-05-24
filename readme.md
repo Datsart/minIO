@@ -1,5 +1,5 @@
 1. pip3 freeze install req.txt
-2. pytho3 app1.py
+2. python3 app1.py
 выводит все файлы и их даты изменений
 2. python3 app2.py
 выводит только те файлы с которыми совпадает нами указанное время

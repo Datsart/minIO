@@ -1,9 +1,9 @@
 import os
 from minio import Minio
-from minio.error import S3Error
 
 
 def upload_files(client, bucket_name, source_folder):
+    '''для загрузки файлов в бакет'''
     # Проходим по всем директориям и файлам в указанной папке
     for root, dirs, files in os.walk(source_folder):
         for file in files:
@@ -36,9 +36,6 @@ def main():
 
     # Загружаем файлы в бакет
     # upload_files(client, bucket_name, source_folder)
-
-    # ДАТА ПО КОТОРОЙ ИЩЕМ
-    find_time = '2024-05-23'
 
     # Список всех объектов в бакете
     print('Все файлы:\n')
