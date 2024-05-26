@@ -12,7 +12,7 @@ def main():
     bucket_name = "python-test-bucket"
 
     # ДАТА ПО КОТОРОЙ ИЩЕМ
-    find_time = '2024-05-23'
+    find_time = '2024-05-27'
 
     # проверка файлов по указанной дате
     objects2 = client.list_objects(bucket_name, recursive=True)
@@ -36,6 +36,7 @@ def main():
             print('\n')
         else:
             print('Таких файлов нет по указанной дате')
+            list_error.append('no_add_files_this_date_error')
             break
 
 
